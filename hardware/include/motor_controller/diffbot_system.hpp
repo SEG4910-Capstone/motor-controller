@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef ROS2_CONTROL_DEMO_EXAMPLE_2__DIFFBOT_SYSTEM_HPP_
-#define ROS2_CONTROL_DEMO_EXAMPLE_2__DIFFBOT_SYSTEM_HPP_
+#ifndef MOTOR_CONTROLLER__DIFFBOT_SYSTEM_HPP_
+#define MOTOR_CONTROLLER__DIFFBOT_SYSTEM_HPP_
 
 #include <memory>
 #include <string>
@@ -31,11 +31,11 @@
 #include "rclcpp_lifecycle/state.hpp"
 
 
-#include "ros2_control_demo_example_2/visibility_control.h"
-#include "ros2_control_demo_example_2/hdc2460_comms.hpp"
-#include "ros2_control_demo_example_2/wheel.h"
+#include "motor_controller/visibility_control.h"
+#include "motor_controller/hdc2460_comms.hpp"
+#include "motor_controller/wheel.h"
 
-namespace ros2_control_demo_example_2
+namespace motor_controller
 {
 class DiffBotSystemHardware : public hardware_interface::SystemInterface
 {
@@ -53,29 +53,29 @@ struct Config
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DiffBotSystemHardware);
 
-  ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  MOTOR_CONTROLLER_PUBLIC
   hardware_interface::CallbackReturn on_init(
     const hardware_interface::HardwareInfo & info) override;
 
-  ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  MOTOR_CONTROLLER_PUBLIC
   std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
 
-  ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  MOTOR_CONTROLLER_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-  ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  MOTOR_CONTROLLER_PUBLIC
   hardware_interface::CallbackReturn on_activate(
     const rclcpp_lifecycle::State & previous_state) override;
 
-  ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  MOTOR_CONTROLLER_PUBLIC
   hardware_interface::CallbackReturn on_deactivate(
     const rclcpp_lifecycle::State & previous_state) override;
 
-  ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  MOTOR_CONTROLLER_PUBLIC
   hardware_interface::return_type read(
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
-  ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  MOTOR_CONTROLLER_PUBLIC
   hardware_interface::return_type write(
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
@@ -88,6 +88,6 @@ private:
 
 };
 
-}  // namespace ros2_control_demo_example_2
+}  // namespace motor_controller
 
-#endif  // ROS2_CONTROL_DEMO_EXAMPLE_2__DIFFBOT_SYSTEM_HPP_
+#endif  // MOTOR_CONTROLLER__DIFFBOT_SYSTEM_HPP_

@@ -13,6 +13,7 @@ class Hdc2460Comms
 
 public:
 
+    Hdc2460Comms() = default;
     /**
      * Constructor for the Hdc2460Comms class.
      *
@@ -34,6 +35,12 @@ public:
 
     }
 
+    void connect(std::string port, uint32_t timeout) {
+        m_serial.Open(port);
+        m_serial.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
+        this->port = port;
+        this->timeout = timeout;
+    }
     void disconnect() {
         m_serial.Close();
     }
