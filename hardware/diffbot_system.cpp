@@ -132,8 +132,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_activate(
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Activating ...please wait...");
-
-  //*******************************************timeout_ms wasnt working so changed it to just timeout *****************************
+  
   comms_.connect(cfg_.device, cfg_.timeout);
   //comms_.connect();
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully activated!");
@@ -157,9 +156,9 @@ hardware_interface::return_type DiffBotSystemHardware::read(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & period)
 {
 
-  //reads encoder values, calculates number of seconds since last time we did it, stores previos position of wheel, calculates new position, sets vel to be diff between new pos and old pos divided by time
-  
-  // ********************************* is this right ???? taken from hdc2460_comms.hpp, equivalent of arduino_comms.hpp, where its read_encoder_values, changed it to match whats in hdc2460_comms***************************************
+  //Reads encoder values, calculates number of seconds since last time we did it, stores previous position of wheel, 
+  //calculates new position, sets velocity to be difference between new position and old position divided by time
+
   comms_.readEncoders();
 
   double delta_seconds = period.seconds();
