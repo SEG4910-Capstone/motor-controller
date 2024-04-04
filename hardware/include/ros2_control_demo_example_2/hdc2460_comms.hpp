@@ -22,16 +22,13 @@ public:
      * 
      */
     // 
-    Hdc2460Comms(std::string port, uint32_t timeout) {
+    Hdc2460Comms() = default;
+
+    void connect(std::string port, uint32_t timeout) {
+        m_serial.Open(port);
+        m_serial.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
         this->port = port;
         this->timeout = timeout;
-    }
-
-    void connect() {
-        m_serial.Open(this->port);
-
-        m_serial.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
-
     }
 
     void disconnect() {

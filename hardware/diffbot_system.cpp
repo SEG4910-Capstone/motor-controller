@@ -134,8 +134,8 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_activate(
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Activating ...please wait...");
 
   //*******************************************timeout_ms wasnt working so changed it to just timeout *****************************
-  //comms_.connect(cfg_.device, cfg_.baud_rate, cfg_.timeout);
-  comms_.connect();
+  comms_.connect(cfg_.device, cfg_.timeout);
+  //comms_.connect();
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully activated!");
 
   return hardware_interface::CallbackReturn::SUCCESS;
