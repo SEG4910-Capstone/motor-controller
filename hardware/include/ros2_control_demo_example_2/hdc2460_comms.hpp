@@ -24,10 +24,25 @@ public:
     // 
     Hdc2460Comms() = default;
 
+    std::string enumerate_port()
+    {
+      std::regex manufacture("(Prolific)(.*)");
+      std::vector<serial::PortInfo> devices = serial::list_ports();
+      std::vector<serial::PortInfo>::iterator ports = devices.begin();
+      while (ports != devices.end())
+      {
+        serial::PortInfo found_port = *ports++;
+        if (std::regex_match(found_port.description.c_str(), manufacture))
+        {
+          usb_port = found_port.port.c_str();
+        }
+      }
+    }
     void connect(std::string port, uint32_t timeout) {
         m_serial.Open(port);
         m_serial.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
-        this->port = port;
+        // this->port = port;
+        this->port = enumerate_port();
         this->timeout = timeout;
     }
 
