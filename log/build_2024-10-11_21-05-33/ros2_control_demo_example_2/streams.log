@@ -1,0 +1,18 @@
+[0.279s] Invoking command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller -- -j8 -l8
+[0.387s] [35m[1mConsolidate compiler generated dependencies of target snowplow_motor_controller[0m
+[0.444s] [ 50%] [32mBuilding CXX object CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o[0m
+[1.120s] In file included from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/diffbot_system.hpp:35[m[K,
+[1.120s]                  from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/diffbot_system.cpp:15[m[K:
+[1.120s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:33:7:[m[K [01;35m[Kwarning: [m[K"/*" within comment [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcomment-Wcomment]8;;[m[K]
+[1.120s]    33 |       /*while (ports != devices.end())
+[1.120s]       |        
+[3.194s] In file included from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/diffbot_system.hpp:35[m[K,
+[3.195s]                  from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/diffbot_system.cpp:15[m[K:
+[3.195s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:[m[K In member function ‘[01m[Kvoid Hdc2460Comms::connect(std::string, uint32_t)[m[K’:
+[3.195s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:46:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kenumerate_port[m[K’ was not declared in this scope
+[3.195s]    46 |         this->port = [01;31m[Kenumerate_port[m[K();
+[3.195s]       |                      [01;31m[K^~~~~~~~~~~~~~[m[K
+[9.829s] gmake[2]: *** [CMakeFiles/snowplow_motor_controller.dir/build.make:76: CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o] Error 1
+[9.829s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/snowplow_motor_controller.dir/all] Error 2
+[9.829s] gmake: *** [Makefile:146: all] Error 2
+[9.833s] Invoked command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller -- -j8 -l8

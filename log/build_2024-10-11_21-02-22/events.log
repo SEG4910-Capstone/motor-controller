@@ -1,0 +1,224 @@
+[0.000000] (-) TimerEvent: {}
+[0.001378] (snowplow_motor_controller) JobQueued: {'identifier': 'snowplow_motor_controller', 'dependencies': OrderedDict()}
+[0.001534] (snowplow_motor_controller) JobStarted: {'identifier': 'snowplow_motor_controller'}
+[0.099001] (-) TimerEvent: {}
+[0.205098] (-) TimerEvent: {}
+[0.306820] (-) TimerEvent: {}
+[0.408188] (-) TimerEvent: {}
+[0.426555] (snowplow_motor_controller) JobProgress: {'identifier': 'snowplow_motor_controller', 'progress': 'cmake'}
+[0.428642] (snowplow_motor_controller) JobProgress: {'identifier': 'snowplow_motor_controller', 'progress': 'build'}
+[0.430549] (snowplow_motor_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller', '--', '-j8', '-l8'], 'cwd': '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller', 'env': OrderedDict([('HOSTNAME', '346e2ffa0d71'), ('GIT_ASKPASS', '/root/.vscode-server/bin/d78a74bcdfad14d5d3b1b782f87255d802b57511/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/root/.vscode-server/bin/d78a74bcdfad14d5d3b1b782f87255d802b57511/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/home/ros2_ws/src/ros2_control_demos'), ('TERM_PROGRAM_VERSION', '1.94.0'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-038eb873-2eb2-4a12-99be-b1f143d8d8ba.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/root/.vscode-server/bin/d78a74bcdfad14d5d3b1b782f87255d802b57511/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/root/.vscode-server/bin/d78a74bcdfad14d5d3b1b782f87255d802b57511/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('_colcon_cd_root', '/opt/ros/iron/'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-aec784cd-7163-4717-a210-1c84c1d01f3a.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.vscode-server/bin/d78a74bcdfad14d5d3b1b782f87255d802b57511/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', '172.20.48.1:0.0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-c663708130.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.508366] (-) TimerEvent: {}
+[0.608920] (-) TimerEvent: {}
+[0.709527] (-) TimerEvent: {}
+[0.810144] (-) TimerEvent: {}
+[0.910894] (-) TimerEvent: {}
+[1.018894] (-) TimerEvent: {}
+[1.119487] (-) TimerEvent: {}
+[1.161136] (snowplow_motor_controller) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o\x1b[0m\n'}
+[1.219664] (-) TimerEvent: {}
+[1.320248] (-) TimerEvent: {}
+[1.420839] (-) TimerEvent: {}
+[1.521475] (-) TimerEvent: {}
+[1.623354] (-) TimerEvent: {}
+[1.723928] (-) TimerEvent: {}
+[1.824514] (-) TimerEvent: {}
+[1.925041] (-) TimerEvent: {}
+[2.025668] (-) TimerEvent: {}
+[2.126169] (-) TimerEvent: {}
+[2.226749] (-) TimerEvent: {}
+[2.327324] (-) TimerEvent: {}
+[2.427997] (-) TimerEvent: {}
+[2.528583] (-) TimerEvent: {}
+[2.629188] (-) TimerEvent: {}
+[2.729757] (-) TimerEvent: {}
+[2.830362] (-) TimerEvent: {}
+[2.930917] (-) TimerEvent: {}
+[3.031562] (-) TimerEvent: {}
+[3.132149] (-) TimerEvent: {}
+[3.232679] (-) TimerEvent: {}
+[3.333229] (-) TimerEvent: {}
+[3.433764] (-) TimerEvent: {}
+[3.534277] (-) TimerEvent: {}
+[3.634885] (-) TimerEvent: {}
+[3.735479] (-) TimerEvent: {}
+[3.836090] (-) TimerEvent: {}
+[3.936680] (-) TimerEvent: {}
+[4.037299] (-) TimerEvent: {}
+[4.137859] (-) TimerEvent: {}
+[4.238386] (-) TimerEvent: {}
+[4.338884] (-) TimerEvent: {}
+[4.439473] (-) TimerEvent: {}
+[4.540100] (-) TimerEvent: {}
+[4.640640] (-) TimerEvent: {}
+[4.741354] (-) TimerEvent: {}
+[4.841931] (-) TimerEvent: {}
+[4.942509] (-) TimerEvent: {}
+[5.043095] (-) TimerEvent: {}
+[5.143713] (-) TimerEvent: {}
+[5.244288] (-) TimerEvent: {}
+[5.344853] (-) TimerEvent: {}
+[5.445492] (-) TimerEvent: {}
+[5.546063] (-) TimerEvent: {}
+[5.646663] (-) TimerEvent: {}
+[5.658624] (snowplow_motor_controller) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/diffbot_system.hpp:35\x1b[m\x1b[K,\n'}
+[5.659073] (snowplow_motor_controller) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/diffbot_system.cpp:15\x1b[m\x1b[K:\n'}
+[5.659283] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::string Hdc2460Comms::enumerate_port()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.659451] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:29:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kregex\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.659616] (snowplow_motor_controller) StderrLine: {'line': b'   29 |       std::\x1b[01;31m\x1b[Kregex\x1b[m\x1b[K manufacture("(Prolific)(.*)");\n'}
+[5.659772] (snowplow_motor_controller) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.672232] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kserial\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Km_serial\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.672678] (snowplow_motor_controller) StderrLine: {'line': b'   30 |       std::vector<\x1b[01;31m\x1b[Kserial\x1b[m\x1b[K::PortInfo> devices = serial::list_ports();\n'}
+[5.672922] (snowplow_motor_controller) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.673131] (snowplow_motor_controller) StderrLine: {'line': b'      |                   \x1b[32m\x1b[Km_serial\x1b[m\x1b[K\n'}
+[5.673295] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.673455] (snowplow_motor_controller) StderrLine: {'line': b'   30 |       std::vector<serial::PortInfo\x1b[01;31m\x1b[K>\x1b[m\x1b[K devices = serial::list_ports();\n'}
+[5.673679] (snowplow_motor_controller) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.673873] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 2 is invalid\n'}
+[5.689900] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kserial\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[5.690411] (snowplow_motor_controller) StderrLine: {'line': b'   30 |       std::vector<serial::PortInfo> devices = \x1b[01;31m\x1b[Kserial\x1b[m\x1b[K::list_ports();\n'}
+[5.690685] (snowplow_motor_controller) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.691180] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:31:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 2 is invalid\n'}
+[5.691413] (snowplow_motor_controller) StderrLine: {'line': b'   31 |       std::vector<serial::PortInfo\x1b[01;31m\x1b[K>\x1b[m\x1b[K::iterator ports = devices.begin();\n'}
+[5.691640] (snowplow_motor_controller) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.691923] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:31:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kqualified-id in declaration before \xe2\x80\x98\x1b[01m\x1b[Kports\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.692216] (snowplow_motor_controller) StderrLine: {'line': b'   31 |       std::vector<serial::PortInfo>::iterator \x1b[01;31m\x1b[Kports\x1b[m\x1b[K = devices.begin();\n'}
+[5.692460] (snowplow_motor_controller) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.697170] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:32:14:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kports\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kport\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.697741] (snowplow_motor_controller) StderrLine: {'line': b'   32 |       while (\x1b[01;31m\x1b[Kports\x1b[m\x1b[K != devices.end())\n'}
+[5.698251] (snowplow_motor_controller) StderrLine: {'line': b'      |              \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.698479] (snowplow_motor_controller) StderrLine: {'line': b'      |              \x1b[32m\x1b[Kport\x1b[m\x1b[K\n'}
+[5.698689] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:32:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kend\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kdevices\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.698980] (snowplow_motor_controller) StderrLine: {'line': b'   32 |       while (ports != devices.\x1b[01;31m\x1b[Kend\x1b[m\x1b[K())\n'}
+[5.699222] (snowplow_motor_controller) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.699615] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:34:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kserial\x1b[m\x1b[K\xe2\x80\x99 is not a class, namespace, or enumeration\n'}
+[5.700220] (snowplow_motor_controller) StderrLine: {'line': b'   34 |         \x1b[01;31m\x1b[Kserial\x1b[m\x1b[K::PortInfo found_port = *ports++;\n'}
+[5.700490] (snowplow_motor_controller) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.701561] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:35:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kregex_match\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.701893] (snowplow_motor_controller) StderrLine: {'line': b'   35 |         if (std::\x1b[01;31m\x1b[Kregex_match\x1b[m\x1b[K(found_port.description.c_str(), manufacture))\n'}
+[5.702134] (snowplow_motor_controller) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.721096] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:35:30:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kfound_port\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.721520] (snowplow_motor_controller) StderrLine: {'line': b'   35 |         if (std::regex_match(\x1b[01;31m\x1b[Kfound_port\x1b[m\x1b[K.description.c_str(), manufacture))\n'}
+[5.721772] (snowplow_motor_controller) StderrLine: {'line': b'      |                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.741646] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:35:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmanufacture\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.742070] (snowplow_motor_controller) StderrLine: {'line': b'   35 |         if (std::regex_match(found_port.description.c_str(), \x1b[01;31m\x1b[Kmanufacture\x1b[m\x1b[K))\n'}
+[5.742266] (snowplow_motor_controller) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.746825] (-) TimerEvent: {}
+[5.753389] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:37:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusb_port\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kushort\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.753783] (snowplow_motor_controller) StderrLine: {'line': b'   37 |           \x1b[01;31m\x1b[Kusb_port\x1b[m\x1b[K = found_port.port.c_str();\n'}
+[5.753974] (snowplow_motor_controller) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.754206] (snowplow_motor_controller) StderrLine: {'line': b'      |           \x1b[32m\x1b[Kushort\x1b[m\x1b[K\n'}
+[5.755643] (snowplow_motor_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:40:5:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kno return statement in function returning non-void [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type\x07-Wreturn-type\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.756074] (snowplow_motor_controller) StderrLine: {'line': b'   40 |     \x1b[01;35m\x1b[K}\x1b[m\x1b[K\n'}
+[5.756381] (snowplow_motor_controller) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[5.847032] (-) TimerEvent: {}
+[5.947650] (-) TimerEvent: {}
+[6.048222] (-) TimerEvent: {}
+[6.148822] (-) TimerEvent: {}
+[6.249463] (-) TimerEvent: {}
+[6.350076] (-) TimerEvent: {}
+[6.450613] (-) TimerEvent: {}
+[6.551186] (-) TimerEvent: {}
+[6.651861] (-) TimerEvent: {}
+[6.752410] (-) TimerEvent: {}
+[6.852984] (-) TimerEvent: {}
+[6.953603] (-) TimerEvent: {}
+[7.054144] (-) TimerEvent: {}
+[7.154702] (-) TimerEvent: {}
+[7.255294] (-) TimerEvent: {}
+[7.355835] (-) TimerEvent: {}
+[7.456422] (-) TimerEvent: {}
+[7.557024] (-) TimerEvent: {}
+[7.657614] (-) TimerEvent: {}
+[7.758180] (-) TimerEvent: {}
+[7.858785] (-) TimerEvent: {}
+[7.959419] (-) TimerEvent: {}
+[8.059993] (-) TimerEvent: {}
+[8.160544] (-) TimerEvent: {}
+[8.261151] (-) TimerEvent: {}
+[8.361716] (-) TimerEvent: {}
+[8.462325] (-) TimerEvent: {}
+[8.562948] (-) TimerEvent: {}
+[8.663514] (-) TimerEvent: {}
+[8.764090] (-) TimerEvent: {}
+[8.864669] (-) TimerEvent: {}
+[8.965356] (-) TimerEvent: {}
+[9.066059] (-) TimerEvent: {}
+[9.167053] (-) TimerEvent: {}
+[9.269344] (-) TimerEvent: {}
+[9.369858] (-) TimerEvent: {}
+[9.470385] (-) TimerEvent: {}
+[9.571000] (-) TimerEvent: {}
+[9.671595] (-) TimerEvent: {}
+[9.772178] (-) TimerEvent: {}
+[9.872761] (-) TimerEvent: {}
+[9.973340] (-) TimerEvent: {}
+[10.073906] (-) TimerEvent: {}
+[10.174516] (-) TimerEvent: {}
+[10.275210] (-) TimerEvent: {}
+[10.375825] (-) TimerEvent: {}
+[10.476344] (-) TimerEvent: {}
+[10.576865] (-) TimerEvent: {}
+[10.677428] (-) TimerEvent: {}
+[10.778088] (-) TimerEvent: {}
+[10.878715] (-) TimerEvent: {}
+[10.979287] (-) TimerEvent: {}
+[11.079864] (-) TimerEvent: {}
+[11.180454] (-) TimerEvent: {}
+[11.281028] (-) TimerEvent: {}
+[11.381652] (-) TimerEvent: {}
+[11.482232] (-) TimerEvent: {}
+[11.582853] (-) TimerEvent: {}
+[11.683453] (-) TimerEvent: {}
+[11.784003] (-) TimerEvent: {}
+[11.884561] (-) TimerEvent: {}
+[11.985131] (-) TimerEvent: {}
+[12.085662] (-) TimerEvent: {}
+[12.186258] (-) TimerEvent: {}
+[12.286800] (-) TimerEvent: {}
+[12.387411] (-) TimerEvent: {}
+[12.488055] (-) TimerEvent: {}
+[12.588548] (-) TimerEvent: {}
+[12.689134] (-) TimerEvent: {}
+[12.789733] (-) TimerEvent: {}
+[12.890283] (-) TimerEvent: {}
+[12.990932] (-) TimerEvent: {}
+[13.091505] (-) TimerEvent: {}
+[13.192140] (-) TimerEvent: {}
+[13.292781] (-) TimerEvent: {}
+[13.393409] (-) TimerEvent: {}
+[13.494010] (-) TimerEvent: {}
+[13.594906] (-) TimerEvent: {}
+[13.695497] (-) TimerEvent: {}
+[13.796089] (-) TimerEvent: {}
+[13.896692] (-) TimerEvent: {}
+[13.997294] (-) TimerEvent: {}
+[14.097905] (-) TimerEvent: {}
+[14.198532] (-) TimerEvent: {}
+[14.299104] (-) TimerEvent: {}
+[14.399717] (-) TimerEvent: {}
+[14.500314] (-) TimerEvent: {}
+[14.600834] (-) TimerEvent: {}
+[14.701337] (-) TimerEvent: {}
+[14.801866] (-) TimerEvent: {}
+[14.902438] (-) TimerEvent: {}
+[15.002982] (-) TimerEvent: {}
+[15.103509] (-) TimerEvent: {}
+[15.204091] (-) TimerEvent: {}
+[15.304666] (-) TimerEvent: {}
+[15.405234] (-) TimerEvent: {}
+[15.505774] (-) TimerEvent: {}
+[15.606340] (-) TimerEvent: {}
+[15.648769] (snowplow_motor_controller) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/snowplow_motor_controller.dir/build.make:76: CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o] Error 1\n'}
+[15.649396] (snowplow_motor_controller) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/snowplow_motor_controller.dir/all] Error 2\n'}
+[15.649956] (snowplow_motor_controller) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[15.657556] (snowplow_motor_controller) CommandEnded: {'returncode': 2}
+[15.706553] (-) TimerEvent: {}
+[15.807494] (-) TimerEvent: {}
+[15.911015] (-) TimerEvent: {}
+[16.011561] (-) TimerEvent: {}
+[16.117328] (-) TimerEvent: {}
+[16.219292] (-) TimerEvent: {}
+[16.315686] (snowplow_motor_controller) JobEnded: {'identifier': 'snowplow_motor_controller', 'rc': 2}
+[16.328332] (-) TimerEvent: {}
+[16.328599] (-) EventReactorShutdown: {}

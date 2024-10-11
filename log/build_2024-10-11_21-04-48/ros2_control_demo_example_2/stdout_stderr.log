@@ -1,0 +1,34 @@
+[35m[1mConsolidate compiler generated dependencies of target snowplow_motor_controller[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o[0m
+In file included from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/diffbot_system.hpp:35[m[K,
+                 from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/diffbot_system.cpp:15[m[K:
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:[m[K In member function ‘[01m[Kstd::string Hdc2460Comms::enumerate_port()[m[K’:
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:29:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kregex[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   29 |       std::[01;31m[Kregex[m[K manufacture("(Prolific)(.*)");
+      |            [01;31m[K^~~~~[m[K
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kserial[m[K’ was not declared in this scope; did you mean ‘[01m[Km_serial[m[K’?
+   30 |       std::vector<[01;31m[Kserial[m[K::PortInfo> devices = serial::list_ports();
+      |                   [01;31m[K^~~~~~[m[K
+      |                   [32m[Km_serial[m[K
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:35:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   30 |       std::vector<serial::PortInfo[01;31m[K>[m[K devices = serial::list_ports();
+      |                                   [01;31m[K^[m[K
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:35:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kserial[m[K’ is not a class, namespace, or enumeration
+   30 |       std::vector<serial::PortInfo> devices = [01;31m[Kserial[m[K::list_ports();
+      |                                               [01;31m[K^~~~~~[m[K
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:31:35:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+   31 |       std::vector<serial::PortInfo[01;31m[K>[m[K::iterator ports = devices.begin();
+      |                                   [01;31m[K^[m[K
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:31:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[Kports[m[K’
+   31 |       std::vector<serial::PortInfo>::iterator [01;31m[Kports[m[K = devices.begin();
+      |                                               [01;31m[K^~~~~[m[K
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:37:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdevices[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   30 |       std::vector<serial::PortInfo> [01;35m[Kdevices[m[K = serial::list_ports();
+      |                                     [01;35m[K^~~~~~~[m[K
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:40:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+   40 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/snowplow_motor_controller.dir/build.make:76: CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/snowplow_motor_controller.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

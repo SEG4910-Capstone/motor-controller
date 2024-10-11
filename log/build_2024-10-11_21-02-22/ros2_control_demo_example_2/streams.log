@@ -1,0 +1,55 @@
+[0.432s] Invoking command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller -- -j8 -l8
+[1.159s] [ 50%] [32mBuilding CXX object CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o[0m
+[5.657s] In file included from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/diffbot_system.hpp:35[m[K,
+[5.657s]                  from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/diffbot_system.cpp:15[m[K:
+[5.657s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:[m[K In member function ‘[01m[Kstd::string Hdc2460Comms::enumerate_port()[m[K’:
+[5.657s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:29:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kregex[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[5.657s]    29 |       std::[01;31m[Kregex[m[K manufacture("(Prolific)(.*)");
+[5.657s]       |            [01;31m[K^~~~~[m[K
+[5.670s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kserial[m[K’ was not declared in this scope; did you mean ‘[01m[Km_serial[m[K’?
+[5.670s]    30 |       std::vector<[01;31m[Kserial[m[K::PortInfo> devices = serial::list_ports();
+[5.671s]       |                   [01;31m[K^~~~~~[m[K
+[5.671s]       |                   [32m[Km_serial[m[K
+[5.671s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:35:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.671s]    30 |       std::vector<serial::PortInfo[01;31m[K>[m[K devices = serial::list_ports();
+[5.671s]       |                                   [01;31m[K^[m[K
+[5.672s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:35:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[5.688s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:30:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kserial[m[K’ is not a class, namespace, or enumeration
+[5.688s]    30 |       std::vector<serial::PortInfo> devices = [01;31m[Kserial[m[K::list_ports();
+[5.689s]       |                                               [01;31m[K^~~~~~[m[K
+[5.689s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:31:35:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[5.689s]    31 |       std::vector<serial::PortInfo[01;31m[K>[m[K::iterator ports = devices.begin();
+[5.689s]       |                                   [01;31m[K^[m[K
+[5.690s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:31:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[Kports[m[K’
+[5.690s]    31 |       std::vector<serial::PortInfo>::iterator [01;31m[Kports[m[K = devices.begin();
+[5.690s]       |                                               [01;31m[K^~~~~[m[K
+[5.695s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:32:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kports[m[K’ was not declared in this scope; did you mean ‘[01m[Kport[m[K’?
+[5.696s]    32 |       while ([01;31m[Kports[m[K != devices.end())
+[5.696s]       |              [01;31m[K^~~~~[m[K
+[5.696s]       |              [32m[Kport[m[K
+[5.697s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:32:31:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kend[m[K’ in ‘[01m[Kdevices[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+[5.697s]    32 |       while (ports != devices.[01;31m[Kend[m[K())
+[5.697s]       |                               [01;31m[K^~~[m[K
+[5.698s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:34:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kserial[m[K’ is not a class, namespace, or enumeration
+[5.698s]    34 |         [01;31m[Kserial[m[K::PortInfo found_port = *ports++;
+[5.698s]       |         [01;31m[K^~~~~~[m[K
+[5.699s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:35:18:[m[K [01;31m[Kerror: [m[K‘[01m[Kregex_match[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[5.700s]    35 |         if (std::[01;31m[Kregex_match[m[K(found_port.description.c_str(), manufacture))
+[5.701s]       |                  [01;31m[K^~~~~~~~~~~[m[K
+[5.719s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:35:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kfound_port[m[K’ was not declared in this scope
+[5.719s]    35 |         if (std::regex_match([01;31m[Kfound_port[m[K.description.c_str(), manufacture))
+[5.720s]       |                              [01;31m[K^~~~~~~~~~[m[K
+[5.740s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:35:62:[m[K [01;31m[Kerror: [m[K‘[01m[Kmanufacture[m[K’ was not declared in this scope
+[5.740s]    35 |         if (std::regex_match(found_port.description.c_str(), [01;31m[Kmanufacture[m[K))
+[5.740s]       |                                                              [01;31m[K^~~~~~~~~~~[m[K
+[5.751s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:37:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kusb_port[m[K’ was not declared in this scope; did you mean ‘[01m[Kushort[m[K’?
+[5.752s]    37 |           [01;31m[Kusb_port[m[K = found_port.port.c_str();
+[5.752s]       |           [01;31m[K^~~~~~~~[m[K
+[5.752s]       |           [32m[Kushort[m[K
+[5.754s] [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:40:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[5.754s]    40 |     [01;35m[K}[m[K
+[5.754s]       |     [01;35m[K^[m[K
+[15.647s] gmake[2]: *** [CMakeFiles/snowplow_motor_controller.dir/build.make:76: CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o] Error 1
+[15.647s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/snowplow_motor_controller.dir/all] Error 2
+[15.648s] gmake: *** [Makefile:146: all] Error 2
+[15.657s] Invoked command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller -- -j8 -l8

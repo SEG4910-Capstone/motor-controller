@@ -1,0 +1,50 @@
+[0.126s] Invoking command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller -- -j8 -l8
+[0.206s] [ 50%] [32mBuilding CXX object CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o[0m
+[6.766s] [100%] [32m[1mLinking CXX shared library libsnowplow_motor_controller.so[0m
+[7.035s] [100%] Built target snowplow_motor_controller
+[7.053s] Invoked command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller -- -j8 -l8
+[7.106s] Invoking command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller
+[7.115s] -- Install configuration: ""
+[7.115s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/snowplow_motor_controller.xml
+[7.115s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller
+[7.116s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller
+[7.116s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/wheel.hpp
+[7.116s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/visibility_control.h
+[7.117s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/config.h
+[7.117s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/diffbot_system.hpp
+[7.118s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/hdc2460_comms.hpp
+[7.118s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch
+[7.118s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch/view_robot.launch.py
+[7.119s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/ros2_control
+[7.119s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/ros2_control/diffbot.ros2_control.xacro
+[7.119s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/urdf
+[7.120s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/urdf/diffbot.urdf.xacro
+[7.120s] -- Up-to-date: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch
+[7.120s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch/diffbot.launch.py
+[7.121s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/config
+[7.121s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/config/diffbot_controllers.yaml
+[7.122s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/lib/libsnowplow_motor_controller.so
+[7.124s] -- Set runtime path of "/home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/lib/libsnowplow_motor_controller.so" to ""
+[7.124s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/library_path.sh
+[7.125s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/library_path.dsv
+[7.127s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/package_run_dependencies/snowplow_motor_controller
+[7.127s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/parent_prefix_path/snowplow_motor_controller
+[7.127s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/ament_prefix_path.sh
+[7.128s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/ament_prefix_path.dsv
+[7.129s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/path.sh
+[7.129s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/path.dsv
+[7.130s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.bash
+[7.131s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.sh
+[7.131s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.zsh
+[7.134s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.dsv
+[7.134s] -- Up-to-date: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/package.dsv
+[7.135s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/packages/snowplow_motor_controller
+[7.135s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/snowplow_motor_controller
+[7.136s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/export_snowplow_motor_controllerExport.cmake
+[7.136s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/export_snowplow_motor_controllerExport-noconfig.cmake
+[7.137s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/ament_cmake_export_targets-extras.cmake
+[7.137s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/ament_cmake_export_dependencies-extras.cmake
+[7.137s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/snowplow_motor_controllerConfig.cmake
+[7.138s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/snowplow_motor_controllerConfig-version.cmake
+[7.138s] -- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/package.xml
+[7.142s] Invoked command in '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller

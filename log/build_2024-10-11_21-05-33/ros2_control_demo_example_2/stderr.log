@@ -1,0 +1,14 @@
+In file included from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/diffbot_system.hpp:35[m[K,
+                 from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/diffbot_system.cpp:15[m[K:
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:33:7:[m[K [01;35m[Kwarning: [m[K"/*" within comment [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcomment-Wcomment]8;;[m[K]
+   33 |       /*while (ports != devices.end())
+      |        
+In file included from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/diffbot_system.hpp:35[m[K,
+                 from [01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/diffbot_system.cpp:15[m[K:
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:[m[K In member function ‘[01m[Kvoid Hdc2460Comms::connect(std::string, uint32_t)[m[K’:
+[01m[K/home/ros2_ws/src/ros2_control_demos/example_2/hardware/include/snowplow_motor_controller/hdc2460_comms.hpp:46:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kenumerate_port[m[K’ was not declared in this scope
+   46 |         this->port = [01;31m[Kenumerate_port[m[K();
+      |                      [01;31m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/snowplow_motor_controller.dir/build.make:76: CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/snowplow_motor_controller.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

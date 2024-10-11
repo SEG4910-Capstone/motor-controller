@@ -1,0 +1,205 @@
+[0.000000] (-) TimerEvent: {}
+[0.000216] (snowplow_motor_controller) JobQueued: {'identifier': 'snowplow_motor_controller', 'dependencies': OrderedDict()}
+[0.000287] (snowplow_motor_controller) JobStarted: {'identifier': 'snowplow_motor_controller'}
+[0.085524] (snowplow_motor_controller) JobProgress: {'identifier': 'snowplow_motor_controller', 'progress': 'cmake'}
+[0.085854] (snowplow_motor_controller) Command: {'cmd': ['/usr/bin/cmake', '/home/ros2_ws/src/ros2_control_demos/example_2', '-DCMAKE_INSTALL_PREFIX=/home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller'], 'cwd': '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller', 'env': OrderedDict([('HOSTNAME', '346e2ffa0d71'), ('GIT_ASKPASS', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/home/ros2_ws/src/ros2_control_demos'), ('TERM_PROGRAM_VERSION', '1.93.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-62ce4699-db25-4351-908a-b7c96b11b273.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('_colcon_cd_root', '/opt/ros/iron/'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-a6b809d1-e1f0-4fba-8db5-f1d60664af1d.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', '172.20.48.1:0.0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-c663708130.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098680] (-) TimerEvent: {}
+[0.199055] (-) TimerEvent: {}
+[0.299385] (-) TimerEvent: {}
+[0.358039] (snowplow_motor_controller) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.382033] (snowplow_motor_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.399551] (-) TimerEvent: {}
+[0.490006] (snowplow_motor_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.499758] (-) TimerEvent: {}
+[0.502412] (snowplow_motor_controller) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.503533] (snowplow_motor_controller) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.504831] (snowplow_motor_controller) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.541929] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.7 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.599927] (-) TimerEvent: {}
+[0.700291] (-) TimerEvent: {}
+[0.773529] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter \n'}
+[0.800466] (-) TimerEvent: {}
+[0.900989] (-) TimerEvent: {}
+[1.001650] (-) TimerEvent: {}
+[1.060020] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found hardware_interface: 2.40.0 (/opt/ros/humble/share/hardware_interface/cmake)\n'}
+[1.101801] (-) TimerEvent: {}
+[1.202364] (-) TimerEvent: {}
+[1.282816] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.297728] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.302537] (-) TimerEvent: {}
+[1.335687] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.380196] (snowplow_motor_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.402655] (-) TimerEvent: {}
+[1.434203] (snowplow_motor_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.502892] (-) TimerEvent: {}
+[1.603325] (-) TimerEvent: {}
+[1.703735] (-) TimerEvent: {}
+[1.804138] (-) TimerEvent: {}
+[1.904472] (-) TimerEvent: {}
+[2.004912] (-) TimerEvent: {}
+[2.105282] (-) TimerEvent: {}
+[2.205682] (-) TimerEvent: {}
+[2.306224] (-) TimerEvent: {}
+[2.406744] (-) TimerEvent: {}
+[2.507122] (-) TimerEvent: {}
+[2.607522] (-) TimerEvent: {}
+[2.707864] (-) TimerEvent: {}
+[2.808273] (-) TimerEvent: {}
+[2.908731] (-) TimerEvent: {}
+[2.968050] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[2.980113] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[3.008884] (-) TimerEvent: {}
+[3.075514] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[3.109008] (-) TimerEvent: {}
+[3.145277] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[3.151687] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[3.171146] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[3.191386] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[3.201109] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[3.209191] (-) TimerEvent: {}
+[3.213055] (snowplow_motor_controller) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.245833] (snowplow_motor_controller) StdoutLine: {'line': b'-- Looking for C++ include pthread.h\n'}
+[3.309315] (-) TimerEvent: {}
+[3.389329] (snowplow_motor_controller) StdoutLine: {'line': b'-- Looking for C++ include pthread.h - found\n'}
+[3.389810] (snowplow_motor_controller) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[3.409488] (-) TimerEvent: {}
+[3.509981] (-) TimerEvent: {}
+[3.522096] (snowplow_motor_controller) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[3.524571] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[3.610143] (-) TimerEvent: {}
+[3.710530] (-) TimerEvent: {}
+[3.810866] (-) TimerEvent: {}
+[3.911385] (-) TimerEvent: {}
+[4.011765] (-) TimerEvent: {}
+[4.012108] (snowplow_motor_controller) StdoutLine: {'line': b'-- Found ament_cmake_pytest: 1.3.7 (/opt/ros/humble/share/ament_cmake_pytest/cmake)\n'}
+[4.111880] (-) TimerEvent: {}
+[4.212232] (-) TimerEvent: {}
+[4.312602] (-) TimerEvent: {}
+[4.412982] (-) TimerEvent: {}
+[4.513302] (-) TimerEvent: {}
+[4.613690] (-) TimerEvent: {}
+[4.714123] (-) TimerEvent: {}
+[4.814595] (-) TimerEvent: {}
+[4.914931] (-) TimerEvent: {}
+[5.015253] (-) TimerEvent: {}
+[5.115611] (-) TimerEvent: {}
+[5.215981] (-) TimerEvent: {}
+[5.246499] (snowplow_motor_controller) StdoutLine: {'line': b'-- Configuring done\n'}
+[5.316113] (-) TimerEvent: {}
+[5.384096] (snowplow_motor_controller) StdoutLine: {'line': b'-- Generating done\n'}
+[5.387441] (snowplow_motor_controller) StdoutLine: {'line': b'-- Build files have been written to: /home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller\n'}
+[5.402926] (snowplow_motor_controller) CommandEnded: {'returncode': 0}
+[5.404043] (snowplow_motor_controller) JobProgress: {'identifier': 'snowplow_motor_controller', 'progress': 'build'}
+[5.405638] (snowplow_motor_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller', '--', '-j8', '-l8'], 'cwd': '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller', 'env': OrderedDict([('HOSTNAME', '346e2ffa0d71'), ('GIT_ASKPASS', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/home/ros2_ws/src/ros2_control_demos'), ('TERM_PROGRAM_VERSION', '1.93.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-62ce4699-db25-4351-908a-b7c96b11b273.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('_colcon_cd_root', '/opt/ros/iron/'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-a6b809d1-e1f0-4fba-8db5-f1d60664af1d.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', '172.20.48.1:0.0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-c663708130.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[5.416356] (-) TimerEvent: {}
+[5.467169] (snowplow_motor_controller) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/snowplow_motor_controller.dir/hardware/diffbot_system.cpp.o\x1b[0m\n'}
+[5.516536] (-) TimerEvent: {}
+[5.616937] (-) TimerEvent: {}
+[5.717267] (-) TimerEvent: {}
+[5.817656] (-) TimerEvent: {}
+[5.918032] (-) TimerEvent: {}
+[6.018422] (-) TimerEvent: {}
+[6.118867] (-) TimerEvent: {}
+[6.219237] (-) TimerEvent: {}
+[6.319598] (-) TimerEvent: {}
+[6.420064] (-) TimerEvent: {}
+[6.520467] (-) TimerEvent: {}
+[6.620948] (-) TimerEvent: {}
+[6.721347] (-) TimerEvent: {}
+[6.821753] (-) TimerEvent: {}
+[6.922177] (-) TimerEvent: {}
+[7.022701] (-) TimerEvent: {}
+[7.123120] (-) TimerEvent: {}
+[7.223542] (-) TimerEvent: {}
+[7.323983] (-) TimerEvent: {}
+[7.424395] (-) TimerEvent: {}
+[7.524764] (-) TimerEvent: {}
+[7.625218] (-) TimerEvent: {}
+[7.725554] (-) TimerEvent: {}
+[7.825947] (-) TimerEvent: {}
+[7.926448] (-) TimerEvent: {}
+[8.026793] (-) TimerEvent: {}
+[8.127219] (-) TimerEvent: {}
+[8.227750] (-) TimerEvent: {}
+[8.328154] (-) TimerEvent: {}
+[8.428543] (-) TimerEvent: {}
+[8.528938] (-) TimerEvent: {}
+[8.629315] (-) TimerEvent: {}
+[8.729676] (-) TimerEvent: {}
+[8.830112] (-) TimerEvent: {}
+[8.930506] (-) TimerEvent: {}
+[9.030910] (-) TimerEvent: {}
+[9.131377] (-) TimerEvent: {}
+[9.231801] (-) TimerEvent: {}
+[9.332212] (-) TimerEvent: {}
+[9.432708] (-) TimerEvent: {}
+[9.533142] (-) TimerEvent: {}
+[9.633473] (-) TimerEvent: {}
+[9.733809] (-) TimerEvent: {}
+[9.834202] (-) TimerEvent: {}
+[9.934675] (-) TimerEvent: {}
+[10.035106] (-) TimerEvent: {}
+[10.135523] (-) TimerEvent: {}
+[10.235871] (-) TimerEvent: {}
+[10.336238] (-) TimerEvent: {}
+[10.436612] (-) TimerEvent: {}
+[10.537024] (-) TimerEvent: {}
+[10.637495] (-) TimerEvent: {}
+[10.737923] (-) TimerEvent: {}
+[10.763925] (snowplow_motor_controller) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libsnowplow_motor_controller.so\x1b[0m\n'}
+[10.838134] (-) TimerEvent: {}
+[10.938539] (-) TimerEvent: {}
+[11.030085] (snowplow_motor_controller) StdoutLine: {'line': b'[100%] Built target snowplow_motor_controller\n'}
+[11.038661] (-) TimerEvent: {}
+[11.040973] (snowplow_motor_controller) CommandEnded: {'returncode': 0}
+[11.067765] (snowplow_motor_controller) JobProgress: {'identifier': 'snowplow_motor_controller', 'progress': 'install'}
+[11.075561] (snowplow_motor_controller) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller'], 'cwd': '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller', 'env': OrderedDict([('HOSTNAME', '346e2ffa0d71'), ('GIT_ASKPASS', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/home/ros2_ws/src/ros2_control_demos'), ('TERM_PROGRAM_VERSION', '1.93.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-62ce4699-db25-4351-908a-b7c96b11b273.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('_colcon_cd_root', '/opt/ros/iron/'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-a6b809d1-e1f0-4fba-8db5-f1d60664af1d.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', '172.20.48.1:0.0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-c663708130.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ros2_ws/src/ros2_control_demos/example_2/build/snowplow_motor_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[11.082891] (snowplow_motor_controller) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[11.083907] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/snowplow_motor_controller.xml\n'}
+[11.084761] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller\n'}
+[11.085165] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller\n'}
+[11.085581] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/wheel.hpp\n'}
+[11.085886] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/visibility_control.h\n'}
+[11.086214] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/config.h\n'}
+[11.086621] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/diffbot_system.hpp\n'}
+[11.086883] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/include/snowplow_motor_controller/snowplow_motor_controller/hdc2460_comms.hpp\n'}
+[11.087188] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch\n'}
+[11.087514] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch/view_robot.launch.py\n'}
+[11.087953] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/ros2_control\n'}
+[11.088263] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/ros2_control/diffbot.ros2_control.xacro\n'}
+[11.088963] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/urdf\n'}
+[11.089199] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/urdf/diffbot.urdf.xacro\n'}
+[11.089836] (snowplow_motor_controller) StdoutLine: {'line': b'-- Up-to-date: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch\n'}
+[11.089960] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/launch/diffbot.launch.py\n'}
+[11.090624] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/config\n'}
+[11.091003] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/config/diffbot_controllers.yaml\n'}
+[11.091908] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/lib/libsnowplow_motor_controller.so\n'}
+[11.093355] (snowplow_motor_controller) StdoutLine: {'line': b'-- Set runtime path of "/home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/lib/libsnowplow_motor_controller.so" to ""\n'}
+[11.093745] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/library_path.sh\n'}
+[11.094043] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/library_path.dsv\n'}
+[11.094999] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/package_run_dependencies/snowplow_motor_controller\n'}
+[11.095519] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/parent_prefix_path/snowplow_motor_controller\n'}
+[11.095856] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/ament_prefix_path.sh\n'}
+[11.096132] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/ament_prefix_path.dsv\n'}
+[11.096377] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/path.sh\n'}
+[11.096671] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/environment/path.dsv\n'}
+[11.097072] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.bash\n'}
+[11.097193] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.sh\n'}
+[11.097416] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.zsh\n'}
+[11.097658] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/local_setup.dsv\n'}
+[11.097937] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/package.dsv\n'}
+[11.098125] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/packages/snowplow_motor_controller\n'}
+[11.098576] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/snowplow_motor_controller\n'}
+[11.099089] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/export_snowplow_motor_controllerExport.cmake\n'}
+[11.099372] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/export_snowplow_motor_controllerExport-noconfig.cmake\n'}
+[11.099712] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[11.100054] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[11.100281] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/snowplow_motor_controllerConfig.cmake\n'}
+[11.100603] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/cmake/snowplow_motor_controllerConfig-version.cmake\n'}
+[11.100727] (snowplow_motor_controller) StdoutLine: {'line': b'-- Installing: /home/ros2_ws/src/ros2_control_demos/example_2/install/snowplow_motor_controller/share/snowplow_motor_controller/package.xml\n'}
+[11.103714] (snowplow_motor_controller) CommandEnded: {'returncode': 0}
+[11.139218] (-) TimerEvent: {}
+[11.239551] (-) TimerEvent: {}
+[11.342450] (-) TimerEvent: {}
+[11.397264] (snowplow_motor_controller) JobEnded: {'identifier': 'snowplow_motor_controller', 'rc': 0}
+[11.398835] (-) EventReactorShutdown: {}
