@@ -1,4 +1,0 @@
-source;share/snowplow_motor_controller/local_setup.bash
-source;share/snowplow_motor_controller/local_setup.dsv
-source;share/snowplow_motor_controller/local_setup.sh
-source;share/snowplow_motor_controller/local_setup.zsh

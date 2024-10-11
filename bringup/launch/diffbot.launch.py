@@ -50,7 +50,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("snowplow_motor_controller"), "urdf", "diffbot.urdf.xacro"]
+                [FindPackageShare("ros2_control_demo_example_2"), "urdf", "diffbot.urdf.xacro"]
             ),
             " ",
             "use_mock_hardware:=",
@@ -61,7 +61,7 @@ def generate_launch_description():
 
     robot_controllers = PathJoinSubstitution(
         [
-            FindPackageShare("snowplow_motor_controller"),
+            FindPackageShare("ros2_control_demo_example_2"),
             "config",
             "diffbot_controllers.yaml",
         ]
