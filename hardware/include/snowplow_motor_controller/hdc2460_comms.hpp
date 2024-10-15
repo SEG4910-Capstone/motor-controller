@@ -24,7 +24,7 @@ public:
     // 
     Hdc2460Comms() = default;
 
-    std::string enumerate_port()
+    /*std::string enumerate_port()
     {
       std::regex manufacture("(Prolific)(.*)");
       std::vector<serial::PortInfo> devices = serial::list_ports();
@@ -38,11 +38,12 @@ public:
         }
       }
     }
+    */
     void connect(std::string port, uint32_t timeout) {
         m_serial.Open(port);
         m_serial.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
         // this->port = port;
-        this->port = enumerate_port();
+        //this->port = enumerate_port();
         this->timeout = timeout;
     }
 
