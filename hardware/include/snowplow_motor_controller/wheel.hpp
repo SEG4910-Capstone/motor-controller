@@ -31,9 +31,9 @@ class Wheel
       rads_per_count = (2*M_PI)/counts_per_rev;
     }
 
-    double calcEncAngle();  // Calculate the angle based on encoder data
+    double calcEncAngle()  // Calculate the angle based on encoder data
     {
-        return enc * rads_per_count
+        return enc * rads_per_count;
     }
 
 
