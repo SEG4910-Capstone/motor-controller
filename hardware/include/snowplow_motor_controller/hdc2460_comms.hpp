@@ -24,7 +24,7 @@ public:
     // 
     Hdc2460Comms() = default;
 
-    std::string enumerate_port()
+    /*std::string enumerate_port()
     {
       std::regex manufacture("(Prolific)(.*)");
       std::vector<serial::PortInfo> devices = serial::list_ports();
@@ -38,11 +38,12 @@ public:
         }
       }
     }
+    */
     void connect(std::string port, uint32_t timeout) {
         m_serial.Open(port);
         m_serial.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
         // this->port = port;
-        this->port = enumerate_port();
+        //this->port = enumerate_port();
         this->timeout = timeout;
     }
 
@@ -106,13 +107,23 @@ public:
       return writeRead(command);
     }
 
-    std::string readEncoders() {
+    std::pair<int, int> readEncoders() {
       
       m_serial.FlushIOBuffers();
 
       std::string command = "?S";
+      std::string response = writeRead(command);
 
-      return writeRead(command);
+      // currently assuming delimiter between two encoder values is a space
+      std::string delimiter = " ";
+      size_t del_pos = response.find(delimiter);
+      std::string token_1 = response.substr(0, del_pos); // left encoder
+      std::string token_2 = response.substr(del_pos + delimiter.length()); // right encoder
+
+      int left_encoder = std::atoi(token_1.c_str());
+      int right_encoder = std::atoi(token_2.c_str());
+
+      return std::make_pair(left_encoder, right_encoder);
     }
     
 
