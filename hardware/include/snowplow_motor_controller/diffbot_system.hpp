@@ -33,7 +33,7 @@
 
 #include "snowplow_motor_controller/visibility_control.h"
 #include "snowplow_motor_controller/hdc2460_comms.hpp"
-#include "snowplow_motor_controller/wheel.h"
+#include "snowplow_motor_controller/wheel.hpp"
 
 namespace snowplow_motor_controller
 {
