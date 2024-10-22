@@ -111,7 +111,7 @@ public:
       
       m_serial.FlushIOBuffers();
 
-      std::string command = "?S";
+      std::string command = "?C";
       std::string response = writeRead(command);
 
       // currently assuming delimiter between two encoder values is a space
@@ -119,7 +119,7 @@ public:
       size_t del_pos = response.find(delimiter);
       std::string token_1 = response.substr(0, del_pos); // left encoder
       std::string token_2 = response.substr(del_pos + delimiter.length()); // right encoder
-
+      
       int left_encoder = std::atoi(token_1.c_str());
       int right_encoder = std::atoi(token_2.c_str());
 
