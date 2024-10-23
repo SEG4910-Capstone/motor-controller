@@ -40,10 +40,14 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   cfg_.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
   cfg_.right_wheel_name = info_.hardware_parameters["right_wheel_name"];
   cfg_.loop_rate = std::stof(info_.hardware_parameters["loop_rate"]);
-  cfg_.device = info_.hardware_parameters["device"];
-  cfg_.baud_rate = std::stoi(info_.hardware_parameters["baud_rate"]);
-  cfg_.timeout = std::stoi(info_.hardware_parameters["timeout"]);
-  cfg_.enc_counts_per_rev = std::stoi(info_.hardware_parameters["enc_counts_per_rev"]);
+  //cfg_.device = info_.hardware_parameters["device"].c_str();
+  cfg_.device = "dev/ttyACM0";
+  //cfg_.baud_rate = std::stoi(info_.hardware_parameters["baud_rate"]);
+  //cfg_.timeout = std::stoi(info_.hardware_parameters["timeout"]);
+  //cfg_.enc_counts_per_rev = std::stoi(info_.hardware_parameters["enc_counts_per_rev"]);
+  cfg_.baud_rate = 115200;
+  cfg_.timeout = 1000;
+  cfg_.enc_counts_per_rev = 1024;
 
   wheel_l_.setup(cfg_.left_wheel_name, cfg_.enc_counts_per_rev);
   wheel_r_.setup(cfg_.right_wheel_name, cfg_.enc_counts_per_rev);
@@ -127,13 +131,41 @@ std::vector<hardware_interface::CommandInterface> DiffBotSystemHardware::export_
   return command_interfaces;
 }
 
+hardware_interface::CallbackReturn DiffBotSystemHardware::on_configure(
+  const rclcpp_lifecycle::State & /*previous_state*/)
+{
+  // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
+  RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Activating ...please wait...");
+  if (comms_.isConnected()) {
+    comms_.disconnect();
+  }
+
+  comms_.connect(cfg_.device, cfg_.timeout);
+  //comms_.connect();
+  RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully configured!");
+
+  return hardware_interface::CallbackReturn::SUCCESS;
+}
+
+hardware_interface::CallbackReturn DiffBotSystemHardware::on_cleanup(
+  const rclcpp_lifecycle::State & /*previous_state*/)
+{
+  // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
+  RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Deactivating ...please wait...");
+
+  comms_.disconnect();
+  RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully cleaned up!");
+
+  return hardware_interface::CallbackReturn::SUCCESS;
+}
+
 hardware_interface::CallbackReturn DiffBotSystemHardware::on_activate(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Activating ...please wait...");
-  
-  comms_.connect(cfg_.device, cfg_.timeout);
+
+  //comms_.connect(cfg_.device, cfg_.timeout);
   //comms_.connect();
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully activated!");
 

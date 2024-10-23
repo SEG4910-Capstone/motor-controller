@@ -25,6 +25,7 @@ add_library(
   snowplow_motor_controller
   SHARED
   hardware/diffbot_system.cpp
+  hardware/serialib.cpp
 )
 target_compile_features(snowplow_motor_controller PUBLIC cxx_std_17)
 target_include_directories(snowplow_motor_controller PUBLIC
@@ -36,7 +37,7 @@ ament_target_dependencies(
   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
 
-target_link_libraries(snowplow_motor_controller PUBLIC serial)
+target_link_libraries(snowplow_motor_controller PUBLIC)
 # Causes the visibility macros to use dllexport rather than dllimport,
 # which is appropriate when building the dll but not consuming it.
 target_compile_definitions(${PROJECT_NAME} PRIVATE "snowplow_motor_controller_BUILDING_DLL")

@@ -67,13 +67,13 @@ def generate_launch_description():
         ]
     )
     rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("ros2_control_demo_description"), "diffbot/rviz", "diffbot.rviz"]
+        [FindPackageShare("snowplow_motor_controller"), "rviz", "diffbot.rviz"]
     )
 
     control_node = Node(
         package="controller_manager",
         executable="ros2_control_node",
-        parameters=[robot_controllers],
+        parameters=[robot_description, robot_controllers],
         output="both",
         remappings=[
             ("~/robot_description", "/robot_description"),

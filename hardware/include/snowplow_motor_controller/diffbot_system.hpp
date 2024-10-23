@@ -45,7 +45,7 @@ struct Config
   std::string left_wheel_name = "";
   std::string right_wheel_name = "";
   float loop_rate = 0.0;
-  std::string device = "";
+  const char *device = "";
   int baud_rate = 0;
   int timeout = 0;
   int enc_counts_per_rev = 0;
@@ -62,6 +62,14 @@ public:
 
   snowplow_motor_controller_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
+
+  snowplow_motor_controller_PUBLIC
+  hardware_interface::CallbackReturn on_configure(
+    const rclcpp_lifecycle::State & previous_state) override;
+
+  snowplow_motor_controller_PUBLIC
+  hardware_interface::CallbackReturn on_cleanup(
+    const rclcpp_lifecycle::State & previous_state) override;
 
   snowplow_motor_controller_PUBLIC
   hardware_interface::CallbackReturn on_activate(
