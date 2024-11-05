@@ -41,7 +41,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   cfg_.right_wheel_name = info_.hardware_parameters["right_wheel_name"];
   cfg_.loop_rate = std::stof(info_.hardware_parameters["loop_rate"]);
   //cfg_.device = info_.hardware_parameters["device"].c_str();
-  cfg_.device = "dev/ttyACM0";
+  cfg_.device = "/dev/ttyACM0";
   //cfg_.baud_rate = std::stoi(info_.hardware_parameters["baud_rate"]);
   //cfg_.timeout = std::stoi(info_.hardware_parameters["timeout"]);
   //cfg_.enc_counts_per_rev = std::stoi(info_.hardware_parameters["enc_counts_per_rev"]);
@@ -135,13 +135,20 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_configure(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
-  RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Activating ...please wait...");
+  RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Configuring ...please wait...");
   if (comms_.isConnected()) {
     comms_.disconnect();
   }
 
   comms_.connect(cfg_.device, cfg_.timeout);
   //comms_.connect();
+
+  if (comms_.isConnected()) {
+    //comms_.disconnect();
+    RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Succesfully connected to serial port!");
+  } else {
+    RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Unable to connect to serial port!");
+  }
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully configured!");
 
   return hardware_interface::CallbackReturn::SUCCESS;
@@ -191,7 +198,12 @@ hardware_interface::return_type DiffBotSystemHardware::read(
   //Reads encoder values, calculates number of seconds since last time we did it, stores previous position of wheel, 
   //calculates new position, sets velocity to be difference between new position and old position divided by time
 
-  comms_.readEncoders();
+
+
+  //comms_.readEncoders();
+
+  wheel_l_.enc = comms_.readEncoderCh1();
+  wheel_r_.enc = comms_.readEncoderCh2();
 
   double delta_seconds = period.seconds();
 
@@ -210,6 +222,14 @@ hardware_interface::return_type snowplow_motor_controller ::DiffBotSystemHardwar
 {
   int motor_l_counters_per_loop = wheel_l_.cmd / wheel_l_.rads_per_count / cfg_.loop_rate;
   int motor_r_counters_per_loop = wheel_r_.cmd / wheel_r_.rads_per_count / cfg_.loop_rate;
+  RCLCPP_INFO(
+      rclcpp::get_logger("DiffBotSystemHardware"),
+      "Motor1 Speed: %d, Motor2 Speed: %d",
+      motor_l_counters_per_loop,
+      motor_r_counters_per_loop
+  );
+
+
   comms_.setMotor1Speed(motor_l_counters_per_loop);
   comms_.setMotor2Speed(motor_r_counters_per_loop);
   return hardware_interface::return_type::OK;

@@ -75,14 +75,18 @@ def generate_launch_description():
         executable="ros2_control_node",
         parameters=[robot_description, robot_controllers],
         output="both",
+        #arguments=['--ros-args', '--log-level', 'INFO'],
+        arguments=['--ros-args', '--log-level', 'DEBUG'],
         remappings=[
             ("~/robot_description", "/robot_description"),
         ],
+
     )
     robot_state_pub_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        output="both",
+        output='screen',
+        emulate_tty=True,
         parameters=[robot_description],
         remappings=[
             ("/diff_drive_controller/cmd_vel_unstamped", "/cmd_vel"),
