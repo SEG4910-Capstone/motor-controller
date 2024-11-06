@@ -39,7 +39,8 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
 
   cfg_.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
   cfg_.right_wheel_name = info_.hardware_parameters["right_wheel_name"];
-  cfg_.loop_rate = std::stof(info_.hardware_parameters["loop_rate"]);
+  //cfg_.loop_rate = std::stof(info_.hardware_parameters["loop_rate"]);
+  cfg_.loop_rate = 30.0;
   //cfg_.device = info_.hardware_parameters["device"].c_str();
   cfg_.device = "/dev/ttyACM0";
   //cfg_.baud_rate = std::stoi(info_.hardware_parameters["baud_rate"]);
@@ -220,6 +221,11 @@ hardware_interface::return_type DiffBotSystemHardware::read(
 hardware_interface::return_type snowplow_motor_controller ::DiffBotSystemHardware::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
+
+
+  RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "wheel_l_.cmd: %f", wheel_l_.cmd);
+
+
   int motor_l_counters_per_loop = wheel_l_.cmd / wheel_l_.rads_per_count / cfg_.loop_rate;
   int motor_r_counters_per_loop = wheel_r_.cmd / wheel_r_.rads_per_count / cfg_.loop_rate;
   RCLCPP_INFO(
