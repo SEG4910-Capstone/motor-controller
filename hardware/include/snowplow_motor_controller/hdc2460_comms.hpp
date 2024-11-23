@@ -45,6 +45,25 @@ public:
         return is_connected; 
     } 
 
+    void configure(bool openLoop) {
+        if (openLoop) {
+            writeRead("^MMOD 1 0");
+            writeRead("^MMOD 2 0");
+        } else {
+            writeRead("^MMOD 1 1");
+            writeRead("^MMOD 2 1");
+
+            writeRead("^KP 1 10");
+            writeRead("^KP 2 10");
+
+            writeRead("^KI 1 80");
+            writeRead("^KI 2 80");
+
+            writeRead("^KD 1 10");
+            writeRead("^KD 2 10");
+        }
+    }
+
     std::string writeRead(const std::string& command) {
         std::string response;
 
@@ -65,16 +84,29 @@ public:
         return response;
     }
 
-    std::string setMotor1Speed(const int speed) {
-        std::string command = "!G 1 " + std::to_string(speed);
-        
-        return writeRead(command);
+
+    std::string setMotorSpeeds(bool openLoop, int speed1, int speed2) {
+        if (openLoop) {
+            writeRead("!G 1 " + std::to_string(speed1));
+            writeRead("!G 2 " + std::to_string(speed2));
+
+        } else {
+            writeRead("!S 1 " + std::to_string(speed1));
+            writeRead("!S 2 " + std::to_string(speed2));   
+        }
+
     }
 
-    std::string setMotor2Speed(const int speed) {
-        std::string command = "!G 2 " + std::to_string(speed);
-        return writeRead(command);
-    }
+    // std::string setMotor1Speed(const int speed) {
+    //     std::string command = "!S 1 " + std::to_string(speed);
+        
+    //     return writeRead(command);
+    // }
+
+    // std::string setMotor2Speed(const int speed) {
+    //     std::string command = "!S 2 " + std::to_string(speed);
+    //     return writeRead(command);
+    // }
 
     std::string readEncoders() {
         std::string command = "?C 1";

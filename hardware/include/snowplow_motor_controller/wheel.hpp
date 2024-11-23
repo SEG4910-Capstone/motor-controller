@@ -1,5 +1,5 @@
-#ifndef DIFFDRIVE_ARDUINO_WHEEL_H
-#define DIFFDRIVE_ARDUINO_WHEEL_H
+#ifndef DIFFDRIVE_SNOWPLOW_WHEEL_H
+#define DIFFDRIVE_SNOWPLOW_WHEEL_H
 
 #include <string>
 #include <cmath>

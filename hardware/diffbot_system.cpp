@@ -40,7 +40,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   cfg_.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
   cfg_.right_wheel_name = info_.hardware_parameters["right_wheel_name"];
   //cfg_.loop_rate = std::stof(info_.hardware_parameters["loop_rate"]);
-  cfg_.loop_rate = 30.0;
+  cfg_.loop_rate = 120.0;
   //cfg_.device = info_.hardware_parameters["device"].c_str();
   cfg_.device = "/dev/ttyACM0";
   //cfg_.baud_rate = std::stoi(info_.hardware_parameters["baud_rate"]);
@@ -49,6 +49,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   cfg_.baud_rate = 115200;
   cfg_.timeout = 1000;
   cfg_.enc_counts_per_rev = 1024;
+  cfg_.openLoop = true;
 
   wheel_l_.setup(cfg_.left_wheel_name, cfg_.enc_counts_per_rev);
   wheel_r_.setup(cfg_.right_wheel_name, cfg_.enc_counts_per_rev);
@@ -147,6 +148,11 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_configure(
   if (comms_.isConnected()) {
     //comms_.disconnect();
     RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Succesfully connected to serial port!");
+
+  
+    comms_.configure(cfg_.openLoop);
+
+
   } else {
     RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Unable to connect to serial port!");
   }
@@ -202,9 +208,9 @@ hardware_interface::return_type DiffBotSystemHardware::read(
 
 
   //comms_.readEncoders();
-
-  wheel_l_.enc = comms_.readEncoderCh1();
-  wheel_r_.enc = comms_.readEncoderCh2();
+  // 
+  wheel_l_.enc = comms_.readEncoderCh1() / 28.7;
+  wheel_r_.enc = comms_.readEncoderCh2() / 28.7;
 
   double delta_seconds = period.seconds();
 
@@ -226,8 +232,11 @@ hardware_interface::return_type snowplow_motor_controller ::DiffBotSystemHardwar
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "wheel_l_.cmd: %f", wheel_l_.cmd);
 
 
-  int motor_l_counters_per_loop = wheel_l_.cmd / wheel_l_.rads_per_count / cfg_.loop_rate;
-  int motor_r_counters_per_loop = wheel_r_.cmd / wheel_r_.rads_per_count / cfg_.loop_rate;
+   int motor_l_counters_per_loop = wheel_l_.cmd / wheel_l_.rads_per_count / cfg_.loop_rate;
+   int motor_r_counters_per_loop = wheel_r_.cmd / wheel_r_.rads_per_count / cfg_.loop_rate;
+  //int motor_l_rpm = (wheel_l_.cmd * 60) / (2 * M_PI * wheel_l_.rads_per_count);
+  //int motor_r_rpm = (wheel_r_.cmd * 60) / (2 * M_PI * wheel_r_.rads_per_count);
+
   RCLCPP_INFO(
       rclcpp::get_logger("DiffBotSystemHardware"),
       "Motor1 Speed: %d, Motor2 Speed: %d",
@@ -235,13 +244,25 @@ hardware_interface::return_type snowplow_motor_controller ::DiffBotSystemHardwar
       motor_r_counters_per_loop
   );
 
+  // if (motor_l_counters_per_loop > 500) {
+  //   motor_l_counters_per_loop = 500;
+  // }
 
-  comms_.setMotor1Speed(motor_l_counters_per_loop);
-  comms_.setMotor2Speed(motor_r_counters_per_loop);
+  // if (motor_r_counters_per_loop > 500) {
+  //   motor_r_counters_per_loop = 500;
+  // }
+
+  // comms_.setMotor1Speed(60);
+  // comms_.setMotor2Speed(60);
+  if (cfg_.openLoop) {
+    comms_.setMotorSpeeds(cfg_.openLoop, motor_l_counters_per_loop, motor_r_counters_per_loop);
+  } else {
+    comms_.setMotorSpeeds(cfg_.openLoop, 60, 60);
+  }
   return hardware_interface::return_type::OK;
 }
 
-}  // namespace snowplow_motor_controller
+}  // namespace snowplow_motor_contrcfg_.opeoller
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(

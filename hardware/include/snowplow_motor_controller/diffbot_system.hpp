@@ -49,6 +49,7 @@ struct Config
   int baud_rate = 0;
   int timeout = 0;
   int enc_counts_per_rev = 0;
+  bool openLoop = true;
 };
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DiffBotSystemHardware);

@@ -89,7 +89,7 @@ def generate_launch_description():
         emulate_tty=True,
         parameters=[robot_description],
         remappings=[
-            #("/diffbot_base_controller/cmd_vel_unstamped", "/cmd_vel"),
+        ("/diffbot_base_controller/cmd_vel_unstamped", "/cmd_vel"),
            # ("/cmd_vel", "/diffbot_base_controller/cmd_vel_unstamped"),
         ],
     )
