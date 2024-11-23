@@ -1,174 +1,199 @@
-
-//#include <serial/serial.h>
-#include <libserial/SerialPort.h>
-#include <stdarg.h>
-
-#include <cstdio>
+#include "serialib.h"
+#include <stdexcept> // For std::runtime_error
 #include <string>
-
+#include <iostream>
+#include <cstdint>
+#include <vector>
+#include <regex>
+#include <sstream>
 using namespace std;
 
 class Hdc2460Comms
 {
-
 public:
-
-    /**
-     * Constructor for the Hdc2460Comms class.
-     *
-     * @param port the serial port to use for communication
-     * @param baudrate the baud rate for the serial connection
-     * @param timeout the timeout value for the serial connection
-     * 
-     */
-    // 
+    Hdc2460Comms(const char *port, uint32_t timeout)
+        : port(port), timeout(timeout), baudrate(115200) {}
+        
     Hdc2460Comms() = default;
 
-    /*std::string enumerate_port()
-    {
-      std::regex manufacture("(Prolific)(.*)");
-      std::vector<serial::PortInfo> devices = serial::list_ports();
-      std::vector<serial::PortInfo>::iterator ports = devices.begin();
-      while (ports != devices.end())
-      {
-        serial::PortInfo found_port = *ports++;
-        if (std::regex_match(found_port.description.c_str(), manufacture))
-        {
-          usb_port = found_port.port.c_str();
-        }
+   void connect(const char *port, uint32_t timeout) {
+      this->port = port;
+      this->timeout = timeout;
+      char errorOpening = serial.openDevice(port, 115200);
+      if (errorOpening != 1) {
+        is_connected = false;
+      } else {
+          is_connected = true;
       }
-    }
-    */
-    void connect(std::string port, uint32_t timeout) {
-        m_serial.Open(port);
-        m_serial.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
-        // this->port = port;
-        //this->port = enumerate_port();
-        this->timeout = timeout;
+
+   }
+
+   void connect() {
+          char errorOpening = serial.openDevice(port, 115200);
+          if (errorOpening != 1) {
+            is_connected = false;
+          } else {
+            is_connected = true;
+          }
     }
 
     void disconnect() {
-        m_serial.Close();
+        serial.closeDevice();
     }
 
     bool isConnected() {
-        return m_serial.IsOpen();
+        return is_connected; 
+    } 
+
+    void configure(bool openLoop) {
+        if (openLoop) {
+            writeRead("^MMOD 1 0");
+            writeRead("^MMOD 2 0");
+        } else {
+            writeRead("^MMOD 1 1");
+            writeRead("^MMOD 2 1");
+
+            writeRead("^KP 1 10");
+            writeRead("^KP 2 10");
+
+            writeRead("^KI 1 80");
+            writeRead("^KI 2 80");
+
+            writeRead("^KD 1 10");
+            writeRead("^KD 2 10");
+        }
     }
 
-    /**
-     * Sends a command over the serial connection and waits for a response.
-     *
-     * @param command the command to send over the serial connection
-     *
-     * @return true if a response was received, false otherwise
-     *
-     * @throws None
-     */
-    std::string writeRead(const std::string command ) {
+    std::string writeRead(const std::string& command) {
+        std::string response;
 
-        std::string response = "";
-        m_serial.FlushIOBuffers();
-;
-        m_serial.Write(stringFormat(command + "\r"));
+        // Write the command followed by a carriage return
+        std::string fullCommand = command + "\r";
+        serial.writeString(fullCommand.c_str());
 
-        try {
-          m_serial.Read(response, 8,this->timeout); 
-        } catch (LibSerial::ReadTimeout&) {
-            return "Error";
+        // Read the response
+        unsigned char buffer[256]; // Adjust size as needed
+        int bytesRead = serial.readBytes(buffer, sizeof(buffer), timeout);
+
+        if (bytesRead > 0) {
+            response.assign(buffer, buffer + bytesRead);
+        } else {
+            return "Error or timeout";
         }
 
         return response;
     }
 
-    /**
-     * Sets the speed of the motor on CHANNEL 1.
-     *
-     * @param speed The desired speed of the motor, range between 0 to 1000.
-     *
-     * @return `true` if the motor speed was successfully set, `false` otherwise.
-     *
-     * @throws None
-     */
-    std::string setMotor1Speed(const int speed) {
-           
-      m_serial.FlushIOBuffers();
 
-      std::string command = "!G 1 " + std::to_string(speed);
+    std::string setMotorSpeeds(bool openLoop, int speed1, int speed2) {
+        if (openLoop) {
+            writeRead("!G 1 " + std::to_string(speed1));
+            writeRead("!G 2 " + std::to_string(speed2));
 
-      return writeRead(command);
+        } else {
+            writeRead("!S 1 " + std::to_string(speed1));
+            writeRead("!S 2 " + std::to_string(speed2));   
+        }
+
     }
 
-    std::string setMotor2Speed(const int speed) {
+    // std::string setMotor1Speed(const int speed) {
+    //     std::string command = "!S 1 " + std::to_string(speed);
         
-      m_serial.FlushIOBuffers();
+    //     return writeRead(command);
+    // }
 
-      std::string command = "!G 2 " + std::to_string(speed);
+    // std::string setMotor2Speed(const int speed) {
+    //     std::string command = "!S 2 " + std::to_string(speed);
+    //     return writeRead(command);
+    // }
 
-      return writeRead(command);
+    std::string readEncoders() {
+        std::string command = "?C 1";
+        return writeRead(command);
     }
 
-    std::pair<int, int> readEncoders() {
-      
-      m_serial.FlushIOBuffers();
+    int readEncoderCh1() {
+        std::string command = "?C 1";
+        std::string response = writeRead(command);
 
-      std::string command = "?C";
-      std::string response = writeRead(command);
+        if (response.length() > 4) {
+            response = response.substr(4, response.length());
+        }
 
-      // currently assuming delimiter between two encoder values is a space
-      std::string delimiter = " ";
-      size_t del_pos = response.find(delimiter);
-      std::string token_1 = response.substr(0, del_pos); // left encoder
-      std::string token_2 = response.substr(del_pos + delimiter.length()); // right encoder
-      
-      int left_encoder = std::atoi(token_1.c_str());
-      int right_encoder = std::atoi(token_2.c_str());
+        std::vector<int> integers =  parseIntegers(response);
 
-      return std::make_pair(left_encoder, right_encoder);
+        if (!integers.empty()) {
+            return integers[0];
+        } else {
+            return 0;
+        }
     }
-    
 
-/**
- * @brief format command string into the format roboteq requires
- * @param fmt const string
- * @return formated string
- */
-inline std::string stringFormat(const std::string& fmt, ...)
-{
-  int size = 100;
-  std::string str;
-  va_list ap;
-  while (1)
-  {
-    str.resize(size);
-    va_start(ap, fmt);
-    int n = vsnprintf((char*)str.c_str(), size, fmt.c_str(), ap);
-    va_end(ap);
-    if (n > -1 && n < size)
-    {
-      str.resize(n);
-      return str;
-    }
-    if (n > -1)
-    {
-      size = n + 1;
-    }
-    else
-    {
-      size *= 2;
-    }
-  }
-  return str;
-}
+    int readEncoderCh2() {
+        std::string command = "?C 2";
+        std::string response = writeRead(command);
 
+        if (response.length() > 4) {
+            response = response.substr(4, response.length());
+        }
+
+        std::vector<int> integers =  parseIntegers(response);
+
+        if (!integers.empty()) {
+            return integers[0];
+        } else {
+            return 0;
+        }
+    }
+
+    int extractIntegerWords(const std::string& str) {
+        std::string temp;
+        bool isNegative = false; // To handle negative numbers
+
+        for (char ch : str) {
+            // Check if the character is a digit
+            if (std::isdigit(ch)) {
+                temp += ch; // Build the numeric string
+            } else if (ch == '-' && temp.empty()) {
+                // Handle negative sign for the first digit
+                isNegative = true;
+            } else if (!temp.empty()) {
+                // If we have collected digits and encounter a non-digit, break
+                break;
+            }
+        }
+
+        // If temp is not empty, convert to integer and return
+        if (!temp.empty()) {
+            int number = std::stoi(temp);
+            return isNegative ? -number : number; // Return the integer, adjusting for negative
+        }
+
+        // If no integer found, return 0 (or handle as needed)
+        return 0;
+    }
+
+    std::vector<int> parseIntegers(const std::string& input) {
+        std::vector<int> integers;
+        std::regex integerRegex("-?\\d+"); // Regex to match integers (including negative)
+        std::smatch matches;
+
+        // Use regex_search to find all matches in the input string
+        std::string::const_iterator searchStart(input.cbegin());
+        while (std::regex_search(searchStart, input.cend(), matches, integerRegex)) {
+            integers.push_back(std::stoi(matches[0])); // Convert the matched string to int
+            searchStart = matches.suffix().first; // Move the search start to the end of the last match
+        }
+
+        return integers;
+    }
 
 private:
-    LibSerial::SerialPort m_serial;
-
-    std::string port;
+    serialib serial;
+    const char *port;
     int32_t baudrate;
     uint32_t timeout;
-
-
+    
+    bool is_connected;
 };
-
-
