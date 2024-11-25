@@ -97,16 +97,16 @@ public:
 
     }
 
-    // std::string setMotor1Speed(const int speed) {
-    //     std::string command = "!S 1 " + std::to_string(speed);
+    std::string setMotor1Speed(const int speed) {
+        std::string command = "!G 1 " + std::to_string(speed);
         
-    //     return writeRead(command);
-    // }
+        return writeRead(command);
+    }
 
-    // std::string setMotor2Speed(const int speed) {
-    //     std::string command = "!S 2 " + std::to_string(speed);
-    //     return writeRead(command);
-    // }
+    std::string setMotor2Speed(const int speed) {
+        std::string command = "!G 2 " + std::to_string(speed);
+        return writeRead(command);
+    }
 
     std::string readEncoders() {
         std::string command = "?C 1";
