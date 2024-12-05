@@ -47,7 +47,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   //cfg_.timeout = std::stoi(info_.hardware_parameters["timeout"]);
   //cfg_.enc_counts_per_rev = std::stoi(info_.hardware_parameters["enc_counts_per_rev"]);
   cfg_.baud_rate = 115200;
-  cfg_.timeout = 1000;
+  cfg_.timeout = 50;
   cfg_.enc_counts_per_rev = 1024;
   cfg_.openLoop = true;
 
