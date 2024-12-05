@@ -150,7 +150,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_configure(
     RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Succesfully connected to serial port!");
 
   
-    comms_.configure(cfg_.openLoop);
+    //comms_.configure(cfg_.openLoop);
 
 
   } else {
@@ -209,8 +209,8 @@ hardware_interface::return_type DiffBotSystemHardware::read(
 
   //comms_.readEncoders();
   // 
-  wheel_l_.enc = comms_.readEncoderCh1() / 28.7;
-  wheel_r_.enc = comms_.readEncoderCh2() / 28.7;
+  wheel_l_.enc = comms_.readEncoderCh1() / 29;
+  wheel_r_.enc = comms_.readEncoderCh2() / 29;
 
   double delta_seconds = period.seconds();
 
@@ -240,25 +240,20 @@ hardware_interface::return_type snowplow_motor_controller ::DiffBotSystemHardwar
   RCLCPP_INFO(
       rclcpp::get_logger("DiffBotSystemHardware"),
       "Motor1 Speed: %d, Motor2 Speed: %d",
-      motor_l_counters_per_loop,
-      motor_r_counters_per_loop
+      int(wheel_l_.cmd * 500),
+      int(wheel_r_.cmd * 500)
   );
 
-  // if (motor_l_counters_per_loop > 500) {
-  //   motor_l_counters_per_loop = 500;
-  // }
+  // map wheel.cmd to a value from -1 to 1 to -500 to 500
+  int cmd_map_l = wheel_l_.cmd * 500;
+  int cmd_map_r = wheel_r_.cmd * 500;
 
-  // if (motor_r_counters_per_loop > 500) {
-  //   motor_r_counters_per_loop = 500;
-  // }
-
-  // comms_.setMotor1Speed(60);
-  // comms_.setMotor2Speed(60);
-  if (cfg_.openLoop) {
-    comms_.setMotorSpeeds(cfg_.openLoop, motor_l_counters_per_loop, motor_r_counters_per_loop);
-  } else {
-    comms_.setMotorSpeeds(cfg_.openLoop, 60, 60);
-  }
+  comms_.setMotor1Speed(cmd_map_l);
+  comms_.setMotor2Speed(cmd_map_r);
+  //if (cfg_.openLoop) {  comms_.setMotorSpeeds(cfg_.openLoop, motor_l_counters_per_loop, motor_r_counters_per_loop);
+  //} else {
+  //  comms_.setMotorSpeeds(cfg_.openLoop, 60, 60);
+  //}
   return hardware_interface::return_type::OK;
 }
 
